@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <!-- seo的优化 -->
+    <meta name="keywords" content="加号科技,深圳企业服务,大管加,加号财富,SaaS服务,移动办公,智能绩效,客户渠道,目标任务,审批,考勤,数据分析,人事财务">
+    <meta name="360-site-verification" content="0b178b39e7ffd27ee3a4d77530a0e5a9" />
+    <meta name="sogou_site_verification" content="A8vP4HTgwd"/>
+    <meta name="shenma-site-verification" content="c6a7d5228121bb8c50c74998543622db_1467170676">
+    <meta name="description" content="为中小企业量身定制的移动办公SaaS服务“大管加”，帮助企业管理者通过前所未有的方式大幅提升执行力、降低成本，也让优秀的员工不再被埋没。纯线上的供应链金融平台“加号财富”致力于为诚信的中小企业解决融资难题，通过自主研发的大数据DeepLearning风控技术工具“Protoss”，让企业更便捷且低成本的获得资金。">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="baidu-site-verification" content="S1dETt9nUs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>加号科技</title>
+    <link rel="icon" href="img/client_logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/video-js.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/video.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div>
+                <img class="plus-logo" src="img/icon-logo.png"/>
+                <ul class="fr navbar-right">
+                    <li id="index">首页</li>
+                    <li class="toERPlus">大管加·ERPlus</li>
+                    <li class="toPlusMoney">加号财富·Plusmoney</li>
+                    <li class="aboutUs">关于加号</li>
+                </ul>
+            </div>
+        </header>
+        <div class="main-body">
+            <section id="tep-1" class="in-block">
+                <div class="main-left fl">
+                    <img src="img/picture-1.png" style="width: 343px;height: 94px;">
+                    <!--<span class="normal-font">帮助诚信的中小企业</span><br>-->
+                    <!--<span class="normal-font">更好的<b>生存和发展</b></span>-->
+                    <div class="btn mt-76 aboutUs">了解更多</div>
+                </div>
+                <div id="video" class="main-right fr hide">
+                    <video id="my_video_1" class="video-js vjs-default-skin vjs-big-play-centered " controls preload="none" width="667px" height="375px"
+                           data-setup="{}">
+                        <source src="http://erplus.co/mp/res/plustechvideo.mp4" type='video/mp4' />
+                    </video>
+                    <div class="btn-close"></div>
+                </div>
+                <div id="videoStop" class="main-right fr">
+                    <div class="btn-stop"></div>
+                </div>
+            </section>
+            <section id="tep-2" class="in-block visuallyhidden hide">
+                <div class="main-left fl">
+                    <img src="img/picture-2.png" style="width: 393px;height: 94px;">
+                    <!--<span class="normal-font"><b>大管加</b>·手机上最好用的</span><br>-->
+                    <!--<span class="normal-font"><b>企业管理系统</b></span>-->
+                    <div class="btn mt-76 toERPlus">了解更多</div>
+                </div>
+                <div class="main-right-image fr"></div>
+            </section>
+            <section id="tep-3" class="in-block visuallyhidden hide">
+                <div class="main-left fl">
+                    <img src="img/picture-3.png" style="width: 273px;height: 94px;">
+                    <!--<span class="normal-font"><b>加号财富</b></span><br>-->
+                    <!--<span class="normal-font">让借贷更有意义</span>-->
+                    <div class="btn mt-76 toPlusMoney">了解更多</div>
+                </div>
+                <div class="main-right-img fr"></div>
+            </section>
+            <!--<div style="width: 100%;background-color: #fff;height: 40px;"></div>-->
+            <ul class="bar-foot hide">
+                <li id="li-1"><div id="nav-1" class="active-bar"></div></li>
+                <li id="li-2"><div id="nav-2" class="normal-bar"></div></li>
+                <li id="li-3"><div id="nav-3" class="normal-bar"></div></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+    var switchPage;
+    var index = 1;
+    $(function () {
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+        console.log("this is width");
+        console.log(width);
+        $('.main-body').css('height',height-121);
+//        $('.main-body').css('height',"");
+        window.setTimeout(function () {
+            $('.bar-foot').removeClass("hide");
+        },400);
+       switchPage =  window.setInterval('autoSwitch()',5000)
+
+    });
+    function autoSwitch() {
+        var box = $('#tep-'+index);
+        var nav = $('#nav-'+index);
+        box.addClass('visuallyhidden');
+//                box.one('transitionend', function(e) {
+        box.addClass('hide');
+        nav.removeClass('active-bar')
+        nav.addClass('normal-bar')
+//                });
+        if((index+1)===4){
+            var box2 = $('#tep-1');
+            var nav2 = $('#nav-1');
+            box2.removeClass('hide');
+            nav2.addClass('active-bar');
+            nav2.removeClass('normal-bar');
+            requestAnimationFrame(function(){
+                box2.removeClass('visuallyhidden');
+            });
+        }else{
+            var box2 = $('#tep-'+(index+1));
+            var nav2 = $('#nav-'+(index+1));
+            box2.removeClass('hide');
+            nav2.addClass('active-bar');
+            nav2.removeClass('normal-bar');
+            requestAnimationFrame(function(){
+                box2.removeClass('visuallyhidden');
+            });
+        }
+        index++;
+        if(index===4){
+            index = 1;
+        }
+    }
+    $('.aboutUs').bind('click',function () {
+        window.location.href='/mp-plus/aboutUs.html';
+    })
+    $('#videoStop').bind('click',function () {
+        $('#videoStop').addClass('hide');
+        $('#video').removeClass('hide');
+        var myPlayer_1 = videojs("my_video_1");
+        myPlayer_1.play();
+        var si=setInterval(function () {  //如果停止 就显示封面
+            if(myPlayer_1.ended())
+            {
+                $(".play").addClass("hide");
+                $(".static-pic").removeClass("hide");
+                clearInterval(si);
+            }
+        },1000)
+    })
+    $(".btn-close").bind('click',function () {
+        var vj=$(this).parent().find('.video-js');
+        var id=vj.attr('id');
+        var myPlayer = videojs(id);
+        myPlayer.currentTime(0);
+        myPlayer.pause();
+        $("#video").addClass("hide");
+        $("#videoStop").removeClass("hide");
+        index=1;
+        switchPage = window.setInterval('autoSwitch()',5000)
+    })
+    $('#li-1').bind('click',function () {
+        window.clearInterval(switchPage);
+        $("#nav-1").removeClass('normal-bar');
+        $("#nav-1").addClass('active-bar');
+        $("#nav-2").addClass('normal-bar');
+        $("#nav-3").addClass('normal-bar');
+        $('#tep-1').removeClass('hide');
+        requestAnimationFrame(function(){
+            $('#tep-1').removeClass('visuallyhidden');
+        });
+        $('#tep-2').addClass('hide visuallyhidden');
+        $('#tep-3').addClass('hide visuallyhidden');
+        index = 1;
+        switchPage = window.setInterval('autoSwitch()',5000)
+    })
+    $('#li-2').bind('click',function () {
+        window.clearInterval(switchPage);
+        $("#nav-2").removeClass('normal-bar');
+        $("#nav-2").addClass('active-bar');
+        $("#nav-1").addClass('normal-bar');
+        $("#nav-3").addClass('normal-bar');
+        $('#tep-1').addClass('hide visuallyhidden');
+        $('#tep-2').removeClass('hide');
+        requestAnimationFrame(function(){
+            $('#tep-2').removeClass('visuallyhidden');
+        });
+        $('#tep-3').addClass('hide visuallyhidden');
+        index=2;
+        switchPage = window.setInterval('autoSwitch()',5000)
+    })
+    $('#li-3').bind('click',function () {
+        window.clearInterval(switchPage);
+        $("#nav-3").removeClass('normal-bar');
+        $("#nav-3").addClass('active-bar');
+        $("#nav-2").addClass('normal-bar');
+        $("#nav-1").addClass('normal-bar');
+        $('#tep-1').addClass('hide visuallyhidden');
+        $('#tep-2').addClass('hide visuallyhidden');
+        $('#tep-3').removeClass('hide');
+        requestAnimationFrame(function(){
+            $('#tep-3').removeClass('visuallyhidden');
+        });
+        index = 3;
+        switchPage = window.setInterval('autoSwitch()',5000)
+    })
+    $(".toERPlus").bind('click',function () {
+        window.open('https://www.erplus.co');
+    })
+    $(".toPlusMoney").bind('click',function () {
+        window.open('http://www.plusmoney.cn');
+    })
+    $("#index").bind('click',function () {
+        window.location.href="/mp-plus/index.html";
+    })
+    $('.btn-stop').bind('click',function () {
+        window.clearInterval(switchPage);
+    })
+</script>
+</html>
